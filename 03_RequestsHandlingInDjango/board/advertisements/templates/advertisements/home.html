@@ -1,0 +1,23 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<h3>Выберите категорию</h3>
+<select>
+    {% for category in categories %}
+    <option>{{ category }}</option>
+    {% endfor %}
+</select>
+<h3>Выберите регион</h3>
+<select>
+    {% for region in regions %}
+    <option>{{ region }}</option>
+    {% endfor %}
+</select>
+<h3>Поиск по объявлениям</h3>
+<form>
+  <p><input type="search" placeholder="Поиск по объявлениям">
+  <input type="submit" value="Найти"></p>
+</form>
+</html>
