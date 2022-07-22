@@ -5,7 +5,7 @@ from .models import Advertisement
 
 
 class About(TemplateView):
-    template_name = 'templates/about.html'
+    template_name = 'advertisements_app/about.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
