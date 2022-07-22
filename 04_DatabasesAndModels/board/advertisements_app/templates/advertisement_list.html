@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<h1>Бесплатные объявления</h1>
+{% if advertisement_list %}
+<table>
+    {% for advertisement in advertisement_list %}
+    <tr>
+         <td><a href="/advertisements/{{ advertisement.id }}">{{ advertisement.title }}</a></td>
+        <td>  |  </td>
+        <td>{{ advertisement.price }} руб. ({{ advertisement.price_usd }} $)</td>
+        <td>  |  </td>
+        <td>{{ advertisement.category_adv }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>Объявлений нет</p>
+{% endif %}
+
+
+
+</html>
