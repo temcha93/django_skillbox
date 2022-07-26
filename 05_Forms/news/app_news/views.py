@@ -3,6 +3,7 @@ from pyexpat import model
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse
 from django.views.generic import UpdateView, CreateView, ListView, DetailView
 from .forms import NewsCommentForm
 from .models import News
@@ -35,7 +36,7 @@ class NewsSinglePageView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['news'] = self.object
-        context['comments'] = self.object.news.all()
+        context['comments'] = self.object.comments.all()
         context['comment_form'] = NewsCommentForm
         return context
 
@@ -48,6 +49,6 @@ class NewsSinglePageView(DetailView):
             new_comment.news_comment = news_object
             new_comment.save()
             news_object.save()
-            return HttpResponseRedirect('/news_list')
-        return render(request, 'news/news_single_page.html',
+            return HttpResponseRedirect(reverse('/news_list'))
+        return render(request, reverse('news_pk'),
                       context={'comment_form': comment_form})

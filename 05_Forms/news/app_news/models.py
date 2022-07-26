@@ -21,7 +21,7 @@ class News(models.Model):
 class Comment(models.Model):
     user_name = models.CharField(max_length=100, verbose_name='имя пользователя')
     description = models.CharField(max_length=10000, verbose_name='текст комментария')
-    news_comment = models.ForeignKey('News', on_delete=models.CASCADE, related_name='news', verbose_name='Новость')
+    news_comment = models.ForeignKey('News', on_delete=models.CASCADE, related_name='comments', verbose_name='Новость')
 
     class Meta:
         verbose_name = 'Комментарий'
