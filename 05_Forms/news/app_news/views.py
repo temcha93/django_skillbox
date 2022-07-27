@@ -49,6 +49,6 @@ class NewsSinglePageView(DetailView):
             new_comment.news_comment = news_object
             new_comment.save()
             news_object.save()
-            return HttpResponseRedirect('/news_list')
+            return HttpResponseRedirect(reverse('news_list'))
         return render(request, 'news/news_single_page.html',
                       context={'comment_form': comment_form})
