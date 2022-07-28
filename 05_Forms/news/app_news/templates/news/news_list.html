@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Новости</title>
+</head>
+<h1>Новости</h1>
+<a href="/news_creation_page/"><button>Добавить новость</button></a>
+{% if news_list %}
+<ul>
+    {% for news in news_list %}
+    <li>
+        <a href="/news/{{ news.id }}/news_single_page/">{{ news.title }}</a> | <i>Дата создания: </i>{{ news.date_create }}
+    </li>
+    <br>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Новостей нет</p>
+{% endif %}
+
+</html>
