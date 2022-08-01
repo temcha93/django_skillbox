@@ -1,5 +1,5 @@
 from django import forms
-from .models import News, Comment
+from .models import Comment, News
 
 
 class NewsCreateForm(forms.ModelForm):
@@ -14,3 +14,9 @@ class NewsCommentForm(forms.ModelForm):
         model = Comment
         fields = '__all__'
         exclude = ('news_comment', )
+
+
+class AuthForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)
+
