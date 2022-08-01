@@ -83,9 +83,9 @@ class LoginView(View):
                     auth_form.add_error('__all__', 'Go sleep man!')
             else:
                 auth_form.add_error('__all__', 'Incorrect user data!')
-        return render(request, 'news/login.html', context={'form': auth_form})
+        return render(request, 'news/news_list.html', context={'form': auth_form})
 
 
 class MyLogoutView(LogoutView):
-    template_name = 'news/logout.html'
-    next_page = '../'
+    # template_name = 'news/logout.html'
+    next_page = '/login/'
