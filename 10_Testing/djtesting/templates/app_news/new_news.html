@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "News create/edit" %}{% endblock %}
+
+{% block page %}
+<h1>{% trans "News create/edit" %}</h1>
+<form method="post" autocomplete="off" enctype="multipart/form-data">
+    {{ news_form.as_p }}
+    {% csrf_token %}
+    <button type="submit" name="edit_post">{% trans "Save" %}</button>
+</form>
+{% if news.pictures.count > 0 %}
+    <br>
+    {% for pic in news.pictures.all %}
+            <form method="post">{% csrf_token %}
+                <img src="{{ pic.file.url }}" width="300"/>
+            <input type="hidden" name="pic_id" value="{{ pic.pk }}">
+            <button type="submit" name="delete_pic">{% trans "Delete" %}</button></form><br>
+    {% endfor %}
+{% endif %}
+{% endblock %}

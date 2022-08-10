@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ news.title }}{% endblock %}
+
+{% block page %}
+<h1>{{ news.title }}</h1>
+<pre>{{ news.description }}</pre>
+    {% if news.tag %}
+    <p>{% trans "Tag" %}: <a href="{% url 'last_news' %}?tag={{ news.tag }}">{{ news.tag }}</a></p>
+    {% endif %}
+    <p>{% trans "Published" %}: <a href="{% url 'last_news' %}?date={{ news.published_at|date:'Y-m-d' }}">
+        {{ news.published_at }}</a>, {% trans "author" %}: {% if news.author %}
+                  <a href="{% url 'account' news.author.pk %}">{{ news.author.username }}</a>
+              {% else %}
+                  {% trans "Incognito" %}
+              {% endif %}</p>
+    {% if news.pictures.count > 0 %}
+    <p>
+    {% for pic in news.pictures.all %}
+    <img src="{{ pic.file.url }}" width="400"/>
+    {% endfor %}
+    </p>
+    {% endif %}
+<hr>
+<p><form method="post">
+    {{ form_comment.as_p }}{% csrf_token %}
+    <button type="submit">{% trans "Write comment" %}</button>
+</form></p>
+{% if news.comments.count > 0 %}
+    <p>{% trans "Comments:" %}</p>
+{% else %}
+    <p>{% trans "There's no comments yet" %}</p>
+{% endif %}
+{% for comment in news.comments.all %}
+  <p>{{ comment.name }} said: {{ comment.comment }}</p>
+{% endfor %}
+{% endblock %}
