@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Last news" %}{% endblock %}
+
+{% block page %}
+<h1>{% trans "What's new?" %}</h1>
+    {% if news|length == 0 %}
+        <p>{% trans "And there is nothing. Not written or published." %}</p>
+    {% endif %}
+{% for post in news %}
+
+    {% if not post.fl_ready_to_publish %}<h3>{{ post.title }}</h3>
+    {% else %}<h3><a href="{% url 'details_news' post.pk %}">{{ post.title }}</a></h3>
+    {% endif %}
+    {% if not post.fl_published %}
+        {% if perms.app_news.set_published and post.fl_ready_to_publish %}
+            <form method="post">{% csrf_token %}
+            <input type="hidden" name="news_id" value="{{ post.pk }}">
+            <button type="submit">{% trans "Publish in home page" %}</button></form><br>
+        {% endif %}
+        {% if post.author == user %}<p><i><a href="{% url 'edit_news' post.pk %}">{% trans "edit" %}</a></i></p>
+        {% endif %}
+    {% endif %}
+    <i><a href="{% url 'last_news' %}?date={{ post.published_at|date:'Y-m-d' }}">{{ post.published_at }}</a></i>
+    {% if post.tag %}
+        <p><b>{% trans "Tag" %}:</b> <a href="{% url 'last_news' %}?tag={{ post.tag }}">{{ post.tag }}</a></p>
+    {% endif %}
+    {% if request.GET.mode == 'moder' %}
+        <p>{{ post.description }}</p>
+    {% else %}
+        <p>{{ post.description|truncatechars:100 }} {% if post.pictures.count > 0 %}<i>(+{% trans "pictures" %})</i>{% endif %}</p>
+    {% endif %}
+    <p>{% trans "Author" %}: {% if post.author %}{% if post.author.profile.avatar %}
+        <img src="{{ post.author.profile.avatar.url }}" width="50"/>{% endif %}
+                  <a href="{% url 'account' post.author.pk %}">{{ post.author.username }}</a>
+              {% else %}
+                  {% trans "Incognito" %}
+              {% endif %}
+    </p>
+    <hr>
+{% endfor %}
+{% endblock %}

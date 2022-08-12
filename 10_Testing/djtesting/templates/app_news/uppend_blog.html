@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Import from csv" %}{% endblock %}
+
+{% block page %}
+<h2>{% trans "File import" %}</h2>
+{% trans "CSV-file with format: 'text of post;date publication'" %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{% trans "Load" %}</button>
+</form>
+{% endblock %}

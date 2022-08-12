@@ -1,0 +1,355 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-23 12:01+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: app_news/apps.py:7 app_news/models.py:23 app_news/models.py:24
+#: app_news/models.py:49 app_news/models.py:66
+msgid "news"
+msgstr "новость"
+
+#: app_news/forms.py:8 templates/app_news/news_detail.html:10
+#: templates/app_news/news_list.html:27
+msgid "Tag"
+msgstr "Тег"
+
+#: app_news/forms.py:10
+msgid "Pictures"
+msgstr "Картинки"
+
+#: app_news/models.py:9
+msgid "title"
+msgstr "заголовок"
+
+#: app_news/models.py:10 app_news/models.py:48
+msgid "text"
+msgstr "текст"
+
+#: app_news/models.py:11 app_news/models.py:65
+msgid "created at"
+msgstr "дата создания"
+
+#: app_news/models.py:12
+msgid "modified_at"
+msgstr "дата модификации"
+
+#: app_news/models.py:13
+msgid "published at"
+msgstr "дата публикации"
+
+#: app_news/models.py:14 app_news/models.py:47
+#: templates/app_news/news_detail.html:13
+msgid "author"
+msgstr "автор"
+
+#: app_news/models.py:15
+msgid "publish to blog"
+msgstr "опубликовать в блоге"
+
+#: app_news/models.py:16
+msgid "for home page"
+msgstr "для главной страницы"
+
+#: app_news/models.py:17 app_news/models.py:42
+msgid "tag"
+msgstr "тег"
+
+#: app_news/models.py:26
+msgid "Mark news as published"
+msgstr "Помечать новости опубликованными"
+
+#: app_news/models.py:43
+msgid "tags"
+msgstr "теги"
+
+#: app_news/models.py:55
+msgid "comment"
+msgstr "комментарий"
+
+#: app_news/models.py:56
+msgid "comments"
+msgstr "комментарии"
+
+#: app_news/models.py:64
+msgid "file"
+msgstr "файл"
+
+#: app_news/models.py:69
+msgid "blog picture"
+msgstr "картинка блога"
+
+#: app_news/models.py:70
+msgid "blog pictures"
+msgstr "картинки блога"
+
+#: app_news/views.py:83
+msgid "The news has not yet been published"
+msgstr "Новость еще не опубликована"
+
+#: app_news/views.py:118
+msgid "Not your news, not you and edit"
+msgstr "Не ваша новость, не вам и редактировать"
+
+#: app_news/views.py:121
+msgid "The news has already been published"
+msgstr "Новость уже опубликована"
+
+#: app_news/views.py:203
+msgid "Draft"
+msgstr "Черновик"
+
+#: app_news/views.py:214
+msgid "Check the file format. There seems to be something wrong with it."
+msgstr "Проверьте формат файла. Кажется, с ним что-то не то."
+
+#: app_users/apps.py:7
+msgid "users"
+msgstr "пользователи"
+
+#: app_users/models.py:14
+msgid "user"
+msgstr "пользователь"
+
+#: app_users/models.py:15
+msgid "name"
+msgstr "имя"
+
+#: app_users/models.py:16
+msgid "last name"
+msgstr "фамилия"
+
+#: app_users/models.py:17
+msgid "about"
+msgstr "о себе"
+
+#: app_users/models.py:18
+msgid "phone number"
+msgstr "телефон"
+
+#: app_users/models.py:19
+msgid "city"
+msgstr "город"
+
+#: app_users/models.py:20
+msgid "is author"
+msgstr "верифицированный автор"
+
+#: app_users/models.py:21
+msgid "count published"
+msgstr "опубликованных новостей"
+
+#: app_users/models.py:28
+msgid "avatar"
+msgstr "аватар"
+
+#: app_users/models.py:34
+msgid "profiles"
+msgstr "профайлы"
+
+#: app_users/models.py:35
+msgid "profile"
+msgstr "профайл"
+
+#: app_users/models.py:37
+msgid "Verify authors"
+msgstr "Выдавать разрешения на создавание новостей"
+
+#: templates/app_news/error_news.html:4
+msgid "Something went wrong"
+msgstr "Что-то пошло не так"
+
+#: templates/app_news/new_news.html:4 templates/app_news/new_news.html:7
+msgid "News create/edit"
+msgstr "Добавление/редактирование новости"
+
+#: templates/app_news/new_news.html:11
+#: templates/app_users/update_profile.html:12
+msgid "Save"
+msgstr "Сохранить"
+
+#: templates/app_news/new_news.html:19
+msgid "Delete"
+msgstr "Удалить"
+
+#: templates/app_news/news_detail.html:12
+msgid "Published"
+msgstr "Опубликовано"
+
+#: templates/app_news/news_detail.html:16 templates/app_news/news_list.html:38
+msgid "Incognito"
+msgstr "Инкогнито"
+
+#: templates/app_news/news_detail.html:28
+msgid "Write comment"
+msgstr "Оставить комментарий"
+
+#: templates/app_news/news_detail.html:31
+msgid "Comments:"
+msgstr "Комментарии:"
+
+#: templates/app_news/news_detail.html:33
+msgid "There's no comments yet"
+msgstr "Комментариев пока нет"
+
+#: templates/app_news/news_list.html:4
+msgid "Last news"
+msgstr "Последние новости"
+
+#: templates/app_news/news_list.html:7
+msgid "What's new?"
+msgstr "Что нового?"
+
+#: templates/app_news/news_list.html:9
+msgid "And there is nothing. Not written or published."
+msgstr "А ничего нет. Не написано, или не опубликовано."
+
+#: templates/app_news/news_list.html:20
+msgid "Publish in home page"
+msgstr "Опубликовать на главной странице"
+
+#: templates/app_news/news_list.html:22
+msgid "edit"
+msgstr "редактировать"
+
+#: templates/app_news/news_list.html:32
+msgid "pictures"
+msgstr "картинки"
+
+#: templates/app_news/news_list.html:34
+msgid "Author"
+msgstr "Автор"
+
+#: templates/app_news/uppend_blog.html:4 templates/base.html:14
+msgid "Import from csv"
+msgstr "Импорт из csv"
+
+#: templates/app_news/uppend_blog.html:7
+msgid "File import"
+msgstr "Загрузка файла"
+
+#: templates/app_news/uppend_blog.html:8
+msgid "CSV-file with format: 'text of post;date publication'"
+msgstr "CSV-файл с данными в виде 'текст записи;дата публикации'"
+
+#: templates/app_news/uppend_blog.html:12
+msgid "Load"
+msgstr "Загрузить"
+
+#: templates/app_users/account.html:10
+#: templates/app_users/update_profile.html:4
+#: templates/app_users/update_profile.html:8
+msgid "Edit profile"
+msgstr "Редактирование профайла"
+
+#: templates/app_users/account.html:12
+msgid "Name"
+msgstr "Имя"
+
+#: templates/app_users/account.html:13
+msgid "Last name"
+msgstr "Фамилия"
+
+#: templates/app_users/account.html:14
+msgid "Phone number"
+msgstr "Телефон"
+
+#: templates/app_users/account.html:15
+msgid "City"
+msgstr "Город"
+
+#: templates/app_users/account.html:16
+msgid "About"
+msgstr "О себе"
+
+#: templates/app_users/account.html:26
+msgid "News published"
+msgstr "Опубликовано новостей"
+
+#: templates/app_users/account.html:28
+msgid "Additional information is completely confidential"
+msgstr "Дополнительная информация совершенно засекречена"
+
+#: templates/app_users/account.html:30
+msgid "User blog"
+msgstr "Личный блог"
+
+#: templates/app_users/login.html:4 templates/app_users/login.html:8
+msgid "Enter"
+msgstr "Вход"
+
+#: templates/app_users/login.html:12
+msgid "Log in"
+msgstr "Войти"
+
+#: templates/app_users/register.html:4 templates/app_users/register.html:8
+msgid "Registration"
+msgstr "Регистрация"
+
+#: templates/app_users/register.html:12
+msgid "Reg me"
+msgstr "Зарегистрироваться"
+
+#: templates/base.html:9
+msgid "Home"
+msgstr "Главная"
+
+#: templates/base.html:11
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: templates/base.html:12
+msgid "Log out"
+msgstr "Выйти"
+
+#: templates/base.html:13
+msgid "New post"
+msgstr "Новая запись"
+
+#: templates/base.html:15
+msgid "Drafts"
+msgstr "Черновики"
+
+#: templates/base.html:17
+msgid "News to moderate"
+msgstr "Новости на модерации"
+
+#: templates/base.html:20
+msgid "Comments"
+msgstr "Комментарии в админке"
+
+#: templates/base.html:23
+msgid "Hi, Anonymous!"
+msgstr "Привет, Аноним."
+
+#: templates/base.html:24
+msgid "Register"
+msgstr "Зарегистрироваться"
+
+#: templates/base.html:25
+msgid "log in"
+msgstr "войти"
+
+#: templates/base.html:26
+msgid "or just watch"
+msgstr "или смотреть просто так"
+
+#: templates/base.html:41
+msgid "Go"
+msgstr "Сменить"

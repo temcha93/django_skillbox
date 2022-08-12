@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ user.username }}{% endblock %}
+
+{% block page %}
+
+<h2>{{ user.username }}</h2>
+    {% if user.profile %}
+        {% if user == request.user %}<a href="{% url 'edit_profile' user.profile.pk %}">{% trans "Edit profile" %}</a><br><br>{% endif %}
+        {% if user.profile.avatar %}<img src="{{ user.profile.avatar.url }}" width="200"/><br>{% endif %}
+        {% if user.profile.name %}{% trans "Name" %}: {{ user.profile.name }}<br>{% endif %}
+        {% if user.profile.last_name %}{% trans "Last name" %}: {{ user.profile.last_name }}<br>{% endif %}
+        {% if user.profile.phone %}{% trans "Phone number" %}: {{ user.profile.phone }}<br>{% endif %}
+        {% if user.profile.city %}{% trans "City" %}: {{ user.profile.city }}<br>{% endif %}
+        {% if user.profile.about %}{% trans "About" %}: {{ user.profile.about }}<br>{% endif %}
+        <!--
+        {% if user.profile.is_author %}
+            <br><b>"Верифицированный автор новостей"</b><br>
+        {% elif perms.app_users.set_verified %}
+            <br><form method="post">{% csrf_token %}
+                <button type="submit">"Верифицировать автора"</button>
+                </form>
+        {% endif %}-->
+
+{% trans "News published" %}: {{ user.profile.count_published }}<br>
+    {% else %}
+        {% trans "Additional information is completely confidential" %}<br>
+    {% endif %}
+    <br><a href="{% url 'user_blog' user.username %}">{% trans "User blog" %}</a>
+{% endblock %}
