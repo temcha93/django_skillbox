@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% load i18n %}
+
+<html lang="en">
+
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <title>{{ item.title_item }}</title>
+    {% endblock %}
+</head>
+
+<body>
+    {% block body %}
+        <h3>{{ item.title_item }}</h3>
+        <p>{{ item.text_item }}</p>
+        <img src="/media/{{ item.img_item }}" width="250" height="250"><br>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">{% trans "Buy" %}</button>
+        </form>
+    {% endblock %}
+</body>
+
+</html>

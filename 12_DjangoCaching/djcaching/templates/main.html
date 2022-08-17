@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% load i18n %}
+{% load cache %}
+
+<html lang="en">
+<head>
+    {% cache 500 head %}
+        {% block head %}
+            <meta charset="UTF-8">
+            <title>{% trans "Main page" %}</title>
+        {% endblock %}
+    {% endcache %}
+</head>
+<body>
+    {% cache 500 body %}
+        {% block body %}
+            {% if request.user.is_superuser %}
+                <h2>{% trans "Welcome to the main page" %}, {{ request.user.username }}!</h2>
+                <p><a href="{% url 'cabinet' %}">{% trans "Personal cabinet" %}</a></p>
+                <p><a href="{% url 'list_item' %}">{% trans "List Items" %}</a></p>
+                <p>{% trans "If you want to log out of your account, click" %} <a href="{% url 'logout' %}">{% trans "Logout" %}</a></p>
+
+            {% elif request.user.is_authenticated %}
+                <h2>{% trans "Welcome to the main page" %}, {{ request.user.username }}!</h2>
+                <p><a href="{% url 'cabinet' %}">{% trans "Personal cabinet" %}</a></p>
+                <p><a href="{% url 'list_item' %}">{% trans "List Items" %}</a></p>
+                <p>{% trans "If you want to log out of your account, click" %} <a href="{% url 'logout' %}">{% trans "Logout" %}</a></p>
+
+            {% else %}
+                <h2>{% trans "You are not an authorized user! Please log in to your account" %}. <a href="{% url 'login' %}">{% trans "Sign in" %}</a></h2>
+                <h2>{% trans "If you want to register, click" %} <a href="{% url 'register' %}">{% trans "Registration" %}</a></h2>
+            {% endif %}
+
+        {% endblock %}
+    {% endcache %}
+</body>
+</html>

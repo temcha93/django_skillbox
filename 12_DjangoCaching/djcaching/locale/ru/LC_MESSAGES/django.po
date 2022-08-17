@@ -1,0 +1,262 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-05 01:15+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\app_shop\apps.py:7
+msgid "shop"
+msgstr "магазин"
+
+#: .\app_shop\models.py:6
+msgid "title promo"
+msgstr "название акции"
+
+#: .\app_shop\models.py:7
+msgid "text promo"
+msgstr "текст акции"
+
+#: .\app_shop\models.py:10
+msgid "promo-s"
+msgstr "акции"
+
+#: .\app_shop\models.py:11
+msgid "promo"
+msgstr "акция"
+
+#: .\app_shop\models.py:14
+msgid "title item"
+msgstr "название товара"
+
+#: .\app_shop\models.py:15
+msgid "text item"
+msgstr "описание товара"
+
+#: .\app_shop\models.py:16
+msgid "price"
+msgstr "цена"
+
+#: .\app_shop\models.py:17
+msgid "item photo"
+msgstr "фотография товара"
+
+#: .\app_shop\models.py:20
+msgid "items"
+msgstr "товары"
+
+#: .\app_shop\models.py:21
+msgid "item"
+msgstr "товар"
+
+#: .\app_shop\views.py:23
+msgid "I'm sorry. But this section is not available to you"
+msgstr "Извините. Но данный раздел вам недоступен."
+
+#: .\app_shop\views.py:43
+msgid "Purchase completed"
+msgstr "Покупка осуществлена"
+
+#: .\app_shop\views.py:45
+msgid ""
+"The purchase cannot be made because you do not have enough funds. Please top "
+"up your account balance and try again."
+msgstr ""
+"Покупка не может быть совершена, потому что у вас недостаточно средств. "
+"Пожалуйста, пополните баланс своего счета и повторите попытку."
+
+#: .\app_shop\views.py:47
+msgid "Sorry. The purchase is available only to authorized users."
+msgstr "Извините. Покупка доступна только авторизованным пользователям."
+
+#: .\app_shop\views.py:62
+msgid "The balance has been successfully topped up"
+msgstr "Баланс был успешно пополнен"
+
+#: .\app_users\models.py:8
+msgid "first name"
+msgstr "имя"
+
+#: .\app_users\models.py:9
+msgid "last name"
+msgstr "фамилия"
+
+#: .\app_users\models.py:10
+msgid "birthday"
+msgstr "день рождения"
+
+#: .\app_users\models.py:11
+msgid "city"
+msgstr "город"
+
+#: .\app_users\models.py:12
+msgid "cash balance"
+msgstr "денежный баланс"
+
+#: .\app_users\models.py:16
+msgid "users"
+msgstr "пользователи"
+
+#: .\app_users\models.py:17
+msgid "user"
+msgstr "пользователь"
+
+#: .\templates\app_shop\Items_list.html:11
+msgid "Items page"
+msgstr "Страница товаров"
+
+#: .\templates\app_shop\Items_list.html:17
+msgid "List of available items"
+msgstr "Список доступных товаров"
+
+#: .\templates\app_shop\Items_list.html:21
+msgid "Item name"
+msgstr "Наименование товара"
+
+#: .\templates\app_shop\Items_list.html:22
+#: .\templates\app_shop\personal_cabinet.html:29
+#: .\templates\app_shop\personal_cabinet.html:53
+msgid "Price"
+msgstr "Цена"
+
+#: .\templates\app_shop\Items_list.html:22
+#: .\templates\app_shop\personal_cabinet.html:19
+msgid "rub"
+msgstr "руб"
+
+#: .\templates\app_shop\Items_list.html:23
+#: .\templates\app_shop\personal_cabinet.html:51
+msgid "Description"
+msgstr "Описание"
+
+#: .\templates\app_shop\Items_list.html:25
+#: .\templates\app_shop\personal_cabinet.html:54
+msgid "Details"
+msgstr "Подробнее"
+
+#: .\templates\app_shop\item_detail.html:22
+msgid "Buy"
+msgstr "Купить"
+
+#: .\templates\app_shop\personal_cabinet.html:11 .\templates\main.html:17
+#: .\templates\main.html:23
+msgid "Personal cabinet"
+msgstr "Личный кабинет"
+
+#: .\templates\app_shop\personal_cabinet.html:17
+msgid ""
+"Welcome to your personal account! Here you can get all the relevant "
+"information"
+msgstr ""
+"Добро пожаловать в ваш личный кабинет! Здесь вы можете получить всю "
+"необходимую информацию"
+
+#: .\templates\app_shop\personal_cabinet.html:19
+msgid "Your cash balance"
+msgstr "Ваш денежный баланс"
+
+#: .\templates\app_shop\personal_cabinet.html:20
+msgid "Top up your balance"
+msgstr "Пополнить ваш баланс"
+
+#: .\templates\app_shop\personal_cabinet.html:22
+msgid "This is the history of your purchases"
+msgstr "Это история ваших покупок"
+
+#: .\templates\app_shop\personal_cabinet.html:35
+msgid "Promotions available only to our selected customers"
+msgstr "Акции доступные только нашим клиентам"
+
+#: .\templates\app_shop\personal_cabinet.html:46
+msgid "We suggest you pay attention to these products:"
+msgstr "Мы предлагаем вам обратить внимание на эти продукты:"
+
+#: .\templates\app_shop\top_up_balance.html:11
+#: .\templates\app_shop\top_up_balance.html:17
+msgid "Top up balance"
+msgstr "Пополнить баланс"
+
+#: .\templates\app_shop\top_up_balance.html:21
+msgid "Funds to be credited"
+msgstr "Средства к зачислению"
+
+#: .\templates\app_shop\top_up_balance.html:24
+msgid "Deposit"
+msgstr "Перевести"
+
+#: .\templates\app_users\login.html:11
+msgid "Login page"
+msgstr "Страница входа"
+
+#: .\templates\app_users\login.html:17
+msgid "Login"
+msgstr "Вход"
+
+#: .\templates\app_users\login.html:21
+msgid "Enter"
+msgstr "Войти"
+
+#: .\templates\app_users\register.html:11
+msgid "Registration page"
+msgstr "Страница регистрации"
+
+#: .\templates\app_users\register.html:17 .\templates\main.html:29
+msgid "Registration"
+msgstr "Регистрация"
+
+#: .\templates\app_users\register.html:21
+msgid "Sign up"
+msgstr "Войти"
+
+#: .\templates\base.html:17
+msgid "translate"
+msgstr "перевести"
+
+#: .\templates\main.html:10
+msgid "Main page"
+msgstr "Главная страница"
+
+#: .\templates\main.html:16 .\templates\main.html:22
+msgid "Welcome to the main page"
+msgstr "Добро пожаловать на главную страницу"
+
+#: .\templates\main.html:18 .\templates\main.html:24
+msgid "List Items"
+msgstr "Список товаров"
+
+#: .\templates\main.html:19 .\templates\main.html:25
+msgid "If you want to log out of your account, click"
+msgstr "Если хотите выйти из своей учётной записи, нажмите"
+
+#: .\templates\main.html:19 .\templates\main.html:25
+msgid "Logout"
+msgstr "Выйти"
+
+#: .\templates\main.html:28
+msgid "You are not an authorized user! Please log in to your account"
+msgstr ""
+"Вы не авторизированный пользователь! Пожалуйста, войдите в свою учётную "
+"запись"
+
+#: .\templates\main.html:28
+msgid "Sign in"
+msgstr "Войти"
+
+#: .\templates\main.html:29
+msgid "If you want to register, click"
+msgstr "Если вы хотите зарегистрироваться, нажмите"
