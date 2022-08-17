@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% load i18n %}
+{% load cache %}
+
+<html lang="en">
+
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <title>{% trans "Personal cabinet" %}</title>
+    {% endblock %}
+</head>
+
+<body>
+    {% block body %}
+        <h2>{% trans "Welcome to your personal account! Here you can get all the relevant information" %}.</h2>
+
+        <p>{% trans "Your cash balance" %}: {{ request.user.cash_balance }} {% trans "rub" %}</p>
+        <a href="/shop/top_up_balance">{% trans "Top up your balance" %}</a>
+
+        {% cache 500 history %}
+            <h3><u>{% trans "This is the history of your purchases" %}:</u></h3>
+            <table>
+                <tr align="center">
+                {% for elem in user.first.purchases.all %}
+                    <td>
+                        <h4>{{ elem.title_item }}</h4>
+                        <img src="/media/{{ elem.img_item }}" width="150" height="150">
+                        <h4>{% trans "Price" %}: {{ elem.price }}</h4>
+                    </td>
+                {% endfor %}
+                </tr>
+            </table>
+        {% endcache %}
+
+        <h3><u>{% trans "Promotions available only to our selected customers" %}:</u></h3>
+        <ol>
+            {% for promo in promotions %}
+                <li>
+                    <h3>{{ promo.title }}</h3>
+                    <p>{{ promo.text_promo }}</p>
+                </li>
+            {% endfor %}
+        </ol>
+
+        <table>
+            <caption><h3><u>{% trans "We suggest you pay attention to these products:" %}</u></h3></caption>
+            <tr align="center">
+            {% for item in items_suggest %}
+                <td>
+                    <h3>{{ item.title_item }}</h3>
+                    <p>{% trans "Description" %}: {{ item.text_item|truncatechars:10 }}</p>
+                    <img src="/media/{{ item.img_item }}" width="150" height="150">
+                    <h3>{% trans "Price" %}: {{ item.price }}</h3>
+                    <a href="/shop/item/{{ item.id }}">{% trans "Details" %}</a>
+                </td>
+            {% endfor %}
+            </tr>
+        </table>
+    {% endblock %}
+</body>
+
+</html>

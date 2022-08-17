@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% load i18n %}
+
+<html lang="en">
+
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <title>{% trans "Items page" %}</title>
+    {% endblock %}
+</head>
+
+<body>
+    {% block body %}
+        <h2>{% trans "List of available items" %}</h2>
+        <ol>
+            {% for item in items_list %}
+                <li>
+                    <h3>{% trans "Item name" %}: {{ item.title_item }}</h3>
+                    <p>{% trans "Price" %}: {{ item.price }} {% trans "rub" %}</p>
+                    <p>{% trans "Description" %}: {{ item.text_item|truncatechars:50 }}</p>
+                    <img src="/media/{{ item.img_item }}" width="250" height="250"><br>
+                    <a href="/shop/item/{{ item.id }}">{% trans "Details" %}</a>
+                </li>
+            {% endfor %}
+        </ol>
+    {% endblock %}
+</body>
+
+</html>

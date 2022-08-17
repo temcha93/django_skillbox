@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% load i18n %}
+
+<html lang="en">
+
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <title>{% trans "Top up balance" %}</title>
+    {% endblock %}
+</head>
+
+<body>
+    {% block body %}
+        <h2>{% trans "Top up balance" %}</h2>
+        <form method="post">
+            {% csrf_token %}
+            <p>
+                <label for="id-balance">{% trans "Funds to be credited" %}:</label>
+                <input type="number" name="balance" step="0.01" required id="id-balance">
+            </p>
+            <button type="submit">{% trans "Deposit" %}</button>
+        </form>
+
+    {% endblock %}
+</body>
+
+</html>
